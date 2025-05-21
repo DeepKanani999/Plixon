@@ -53,7 +53,9 @@ const ListingDetailsRight = () => {
 
   const handleMail = () => {
     const subject = encodeURIComponent("Product Inquiry");
-    const body = encodeURIComponent("Hello, I am interested in your products. Please share more details.");
+    const body = encodeURIComponent(
+      "Hello, I am interested in your products. Please share more details."
+    );
     window.location.href = `mailto:info.plixon.in?subject=${subject}&body=${body}`;
   };
 
@@ -320,9 +322,12 @@ const ListingDetailsRight = () => {
               <div className="my-3">
                 <button
                   className="btn p-0 text-decoration-none d-flex align-items-center"
-                  onClick={() => {
-                    alert("Rate Us!!");
-                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://g.page/r/CTja04nreWhBEBM/review",
+                      "_blank"
+                    )
+                  }
                 >
                   <div className="flex items-center bg-transparent rounded-lg hover:bg-gray-100 transition">
                     <i className="ti-star me-2 mx-2" />
