@@ -13,6 +13,7 @@ import styles from "../../styles/style.css";
 import { products } from "@/products";
 import BottomTab from "@/components/BottomBar";
 import UserInfoPopup from "@/components/userDetailPopup";
+import axios from "axios";
 
 const heroImages = [
   "/assets/images/Hero-Banner/TV-setup-1.jpg",
@@ -192,6 +193,42 @@ const HomeScreen = () => {
   const [visible, setVisible] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      // Intercept the event and store it
+      e.preventDefault();
+      setDeferredPrompt(e);
+      console.log("✅ beforeinstallprompt event captured");
+    };
+
+    window.addEventListener("beforeinstallprompt", handler);
+
+    return () => window.removeEventListener("beforeinstallprompt", handler);
+  }, []);
+
+  const handleAddToHomeScreen = async () => {
+    if (!deferredPrompt) {
+      console.log("⚠️ Install prompt not available");
+      return;
+    }
+
+    // Show the prompt
+    deferredPrompt.prompt();
+
+    const result = await deferredPrompt.userChoice;
+    console.log("👉 User response:", result.outcome);
+
+    if (result.outcome === "accepted") {
+      console.log("✅ User accepted the install prompt");
+    } else {
+      console.log("❌ User dismissed the install prompt");
+    }
+
+    // Clear the saved prompt since it can't be used again
+    setDeferredPrompt(null);
+  };
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -419,6 +456,56 @@ const HomeScreen = () => {
     zIndex: 1,
   };
 
+  const [instagramData, setInstagramData] = useState([]);
+  // console.log("instagramData====", instagramData);
+
+  useEffect(() => {
+    // const userId = "392163403988232";
+    // const accessToken =
+    //   "EAATBlBOPtDEBO5D8kT7ZAwxyFbscngDjMZAdt03GI7eY7Ywk99JyWdDB08rLLGCv6A8T7AefLpBGEZBg4CVEY5RJrz2LR8xZAl1qrZCoMjgbCVZA00lERSklvpGayIQaffjRkzvpNylfEkmCyNcBZAptLsf7AZBFzTBZCTdAiz01IAxDh8jCmJQ0FLGtKUhz6us2Cx3NeZC8sZA30FC2YiQc8Il0JqaSmbPcL5tXaiH4PCBZCZANzCHJSyXjQtrFRvQZDZD";
+    // const apiVersion = "v22.0"; // Use the latest API version
+
+    // const url = `https://graph.facebook.com/122192171882269881/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=EAAKTYZCtEvk8BO9s6RuBy8T16kQqyGq3klphYHPZBorwH4YLuZAhZCmG1B30gzGKjJ2JCUWIIRZCDZAvg3NkhDZCioBFzHnMaAZCCucsYoZCPcUNgWgzCrXD3CiADDIMe2iAjtiAq7p3cvjI3aOPnDXCVzcpwEQTkDNzxNgLcUB1566z3x1hsZCJAy5djrr8UJveuDcuENJGyp91Qb2K0APmaifwZDZD`;
+    const url = `https://graph.facebook.com/v18.0/694832246826637?fields=instagram_business_account&access_token=EAAXdOvoxd4gBOzVHb8oonFHKF0wJr0zbdkLLxHzT5pZCOF1qnP836iXgrCgZCJ7rfyMPFR5mCI3ZBvmhdbuPZBupec2Q53dV6axXhTsaMUhG1HpqBEyo6mP1q9TX3xHv0jHRdTMnRb9CZATJJc8qfunKYlWuH6h1MukL4pJGdTTC4v2IU0wI2dPZADvcHQcj25GUphsHYZBVgyhi3dxwqyxsQkjvS2y3qcZD`;
+
+
+    // fetch user id
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Data:=========", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+    // fetch(url)
+    //   .then((response) => {
+    //     const data = response.data;
+    //     if (data.data) {
+    //       const posts = data.data;
+    //       setInstagramData(posts);
+    //       posts.forEach((post) => {
+    //         console.log("Post ID:", post.id);
+    //         console.log("Caption:", post.caption);
+    //         console.log("Media Type:", post.media_type);
+    //         console.log("Media URL:", post.media_url);
+    //         console.log("Permalink:", post.permalink);
+    //         console.log("Thumbnail URL:", post.thumbnail_url);
+    //         console.log("Timestamp:", post.timestamp);
+    //         console.log("---");
+    //       });
+    //     } else if (data.error) {
+    //       console.log("Error fetching posts:", data.error.message);
+    //     } else {
+    //       console.log("No data or error in response:", data);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error during fetch:", error);
+    //   });
+  }, []);
+
   return (
     <Layout>
       {video && <VideoPopup close={setVideo} />}
@@ -491,7 +578,7 @@ const HomeScreen = () => {
           <button onClick={handleCall} style={buttonStyle}>
             <div style={iconWrapperStyle}>
               <img
-                src="/assets/images/black-icons/phone_black.png"
+                src="/assets/images/black-icons/phone_black.svg"
                 alt="Call"
                 style={{ height: "20px", width: "20px" }}
               />
@@ -513,7 +600,7 @@ const HomeScreen = () => {
           >
             <div style={iconWrapperStyle}>
               <img
-                src="/assets/images/black-icons/whatsapp_black.png"
+                src="/assets/images/black-icons/whatsapp_black.svg"
                 alt="WhatsApp"
                 style={{ height: "20px", width: "20px" }}
               />
@@ -525,7 +612,7 @@ const HomeScreen = () => {
           <button onClick={handleLocation} style={buttonStyle}>
             <div style={iconWrapperStyle}>
               <img
-                src="/assets/images/black-icons/location_black.png"
+                src="/assets/images/black-icons/location_black.svg"
                 alt="Location"
                 style={{ height: "20px", width: "20px" }}
               />
@@ -537,7 +624,7 @@ const HomeScreen = () => {
           <button onClick={handleMail} style={buttonStyle}>
             <div style={iconWrapperStyle}>
               <img
-                src="/assets/images/black-icons/gmail_black.png"
+                src="/assets/images/black-icons/gmail_black.svg"
                 alt="Mail"
                 style={{ height: "20px", width: "20px" }}
               />
@@ -625,10 +712,7 @@ const HomeScreen = () => {
         >
           <button
             onClick={() =>
-              window.open(
-                "https://g.page/r/CTja04nreWhBEBM/review",
-                "_blank"
-              )
+              window.open("https://g.page/r/CTja04nreWhBEBM/review", "_blank")
             }
             style={{
               padding: "12px 20px",
@@ -721,7 +805,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/phone_black.png"
+                      src="/assets/images/black-icons/phone_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -751,7 +835,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/location_black.png"
+                      src="/assets/images/black-icons/location_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -792,7 +876,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/whatsapp_black.png"
+                      src="/assets/images/black-icons/whatsapp_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -822,7 +906,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/gmail_black.png"
+                      src="/assets/images/black-icons/gmail_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -918,7 +1002,7 @@ const HomeScreen = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/phone_black.png"
+                        src="/assets/images/black-icons/phone_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -948,7 +1032,7 @@ const HomeScreen = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/location_black.png"
+                        src="/assets/images/black-icons/location_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -989,7 +1073,7 @@ const HomeScreen = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/whatsapp_black.png"
+                        src="/assets/images/black-icons/whatsapp_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -1019,7 +1103,7 @@ const HomeScreen = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/gmail_black.png"
+                        src="/assets/images/black-icons/gmail_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -1160,7 +1244,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/phone_black.png"
+                      src="/assets/images/black-icons/phone_black.svg"
                       alt="Call"
                       style={{
                         height: "17px",
@@ -1211,7 +1295,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/whatsapp_black.png"
+                      src="/assets/images/black-icons/whatsapp_black.svg"
                       alt="WhatsApp"
                       style={{
                         height: "15px",
@@ -1253,7 +1337,7 @@ const HomeScreen = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/location_black.png"
+                      src="/assets/images/black-icons/location_black.svg"
                       alt="Location"
                       style={{
                         height: "18px",
@@ -1268,7 +1352,7 @@ const HomeScreen = () => {
 
                 {/* Share */}
                 <button
-                  onClick={handleShare}
+                  onClick={handleAddToHomeScreen}
                   style={{
                     display: "flex",
                     flexDirection: "row",
