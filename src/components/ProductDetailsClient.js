@@ -298,7 +298,7 @@ const ProductDetailsClient = ({ item }) => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/phone_black.png"
+                      src="/assets/images/black-icons/phone_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -328,7 +328,7 @@ const ProductDetailsClient = ({ item }) => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/location_black.png"
+                      src="/assets/images/black-icons/location_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -369,7 +369,7 @@ const ProductDetailsClient = ({ item }) => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/whatsapp_black.png"
+                      src="/assets/images/black-icons/whatsapp_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -399,7 +399,7 @@ const ProductDetailsClient = ({ item }) => {
                     }}
                   >
                     <img
-                      src="/assets/images/black-icons/gmail_black.png"
+                      src="/assets/images/black-icons/gmail_black.svg"
                       alt="Call"
                       style={{ height: "20px", width: "20px" }}
                     />
@@ -409,37 +409,33 @@ const ProductDetailsClient = ({ item }) => {
               </div>
 
               {/* Right Section: Rounded Social Buttons */}
-              <div style={{ display: "flex", gap: "10px" }}>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleFacebook}
-                  style={{ padding: "8px", backgroundColor: "#3A559F" }}
-                >
-                  <img src="/assets/images/icons/facebook.png" alt="Facebook" />
-                </button>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleInstagram}
-                  style={{ padding: "8px", backgroundColor: "#D03B98" }}
-                >
+              <div style={{ display: "flex", gap: "10px", marginLeft: "20px" }}>
+                <button className="social-rounded-btn" onClick={handleFacebook}>
                   <img
-                    src="/assets/images/icons/instagram.png"
-                    alt="Instagram"
+                    src="/assets/images/social-media-icons/Facebook.svg"
+                    alt="Facebook"
                   />
                 </button>
                 <button
                   className="social-rounded-btn"
-                  onClick={handleLinkedIn}
-                  style={{ padding: "8px", backgroundColor: "#0B63BD" }}
+                  onClick={handleInstagram}
                 >
-                  <img src="/assets/images/icons/linkedin.png" alt="LinkedIn" />
+                  <img
+                    src="/assets/images/social-media-icons/Instagram.svg"
+                    alt="Instagram"
+                  />
                 </button>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleShare}
-                  style={{ padding: "8px", backgroundColor: "#00ADFF" }}
-                >
-                  <img src="/assets/images/icons/share.png" alt="Share" />
+                <button className="social-rounded-btn" onClick={handleLinkedIn}>
+                  <img
+                    src="/assets/images/social-media-icons/Linkedin.svg"
+                    alt="LinkedIn"
+                  />
+                </button>
+                <button className="social-rounded-btn" onClick={handleShare}>
+                  <img
+                    src="/assets/images/social-media-icons/Share.svg"
+                    alt="Share"
+                  />
                 </button>
               </div>
             </div>
@@ -566,13 +562,18 @@ const ProductDetailsClient = ({ item }) => {
                           <li className="review">
                             <div className="review-thumb">
                               <img
-                                src="/assets/images/products/review-thumb-1.jpg"
+                                src="/assets/images/about-us-page/feedback-user-1.jpg"
                                 alt="review thumb"
+                                style={{
+                                  objectFit: "cover",
+                                  height: "100px",
+                                  width: "200px",
+                                }}
                               />
                             </div>
                             <div className="review-content">
-                              <h4>John F. Medina</h4>
-                              <span className="date">25 May 2021</span>
+                              <h4>Priya Sharma</h4>
+                              <span className="date">25 May 2024</span>
                               <ul className="ratings ratings-four">
                                 <li className="star">
                                   <i className="flaticon-star-1" />
@@ -591,11 +592,10 @@ const ProductDetailsClient = ({ item }) => {
                                 </li>
                               </ul>
                               <p>
-                                Sed ut perspiciatis unde omnis iste natus error
-                                sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae
-                                ab illo inventore veritatis et quasi architecto
-                                beatae vitae dicta sunt explicabo.
+                                Plixon Smart TV has transformed our family
+                                entertainment experience! The picture quality is
+                                exceptional and the smart features work
+                                flawlessly. Best purchase we've made this year!
                               </p>
                               <a href="#" className="reply">
                                 Reply
@@ -605,13 +605,18 @@ const ProductDetailsClient = ({ item }) => {
                           <li className="review">
                             <div className="review-thumb">
                               <img
-                                src="/assets/images/products/review-thumb-2.jpg"
+                                src="/assets/images/about-us-page/feedback-user-2.jpg"
                                 alt="review thumb"
+                                style={{
+                                  objectFit: "cover",
+                                  height: "100px",
+                                  width: "200px",
+                                }}
                               />
                             </div>
                             <div className="review-content">
-                              <h4>John F. Medina</h4>
-                              <span className="date">25 May 2021</span>
+                              <h4>Vikram Singh</h4>
+                              <span className="date">27 April 2024</span>
                               <ul className="ratings ratings-five">
                                 <li className="star">
                                   <i className="flaticon-star-1" />
@@ -630,11 +635,9 @@ const ProductDetailsClient = ({ item }) => {
                                 </li>
                               </ul>
                               <p>
-                                Sed ut perspiciatis unde omnis iste natus error
-                                sit voluptatem accusantium doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae
-                                ab illo inventore veritatis et quasi architecto
-                                beatae vitae dicta sunt explicabo.
+                                Good TV with nice features but the sound quality
+                                could be better. The customer service team was
+                                very helpful when I had questions about setup.
                               </p>
                               <a href="#" className="reply">
                                 Reply

@@ -35,26 +35,38 @@ export default class TestimoinalSlider extends Component {
         >
           <div className="single-thumb">
             <img
-              src="assets/images/testimonial/tm-thumb-1.jpg"
+              src="/assets/images/about-us-page/feedback-user-1.jpg"
               alt="testimonial thumb"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
           <div className="single-thumb">
             <img
-              src="assets/images/testimonial/tm-thumb-2.jpg"
+              src="/assets/images/about-us-page/feedback-user-2.jpg"
               alt="testimonial thumb"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
           <div className="single-thumb">
             <img
-              src="assets/images/testimonial/tm-thumb-3.jpg"
+              src="/assets/images/about-us-page/feedback-user-3.jpg"
               alt="testimonial thumb"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
           <div className="single-thumb">
             <img
-              src="assets/images/testimonial/tm-thumb-2.jpg"
+              src="/assets/images/about-us-page/feedback-user-4.jpg"
               alt="testimonial thumb"
+              style={{
+                objectFit: "cover",
+              }}
             />
           </div>
         </Slider>
@@ -74,13 +86,13 @@ export default class TestimoinalSlider extends Component {
           <div className="testimonial-item">
             <div className="testimonial-content">
               <p>
-                multiply given all hath given may meat god abundant appear lioud
-                fourth madman mane said god dominion great gathering called very
-                shall after cre ated from fruitful place over the mitual{" "}
+                Good TV with nice features but the sound quality could be
+                better. The customer service team was very helpful when I had
+                questions about setup.{" "}
               </p>
               <div className="author-info">
                 <div className="author-title">
-                  <h4>Melisa Powels</h4>
+                  <h4>Priya Sharma</h4>
                   {/* <span className="position">Sr. Designer</span> */}
                 </div>
               </div>
@@ -89,13 +101,13 @@ export default class TestimoinalSlider extends Component {
           <div className="testimonial-item">
             <div className="testimonial-content">
               <p>
-                multiply given all hath given may meat god abundant appear lioud
-                fourth madman mane said god dominion great gathering called very
-                shall after cre ated from fruitful place over the mitual{" "}
+                I'm extremely satisfied with my Plixon TV. The Android interface
+                is smooth and the display is perfect for cricket matches. Would
+                definitely recommend to friends!{" "}
               </p>
               <div className="author-info">
                 <div className="author-title">
-                  <h4>Martyn Decode</h4>
+                  <h4>Rajesh Patel</h4>
                   {/* <span className="position">Sr. Designer</span> */}
                 </div>
               </div>
@@ -104,13 +116,14 @@ export default class TestimoinalSlider extends Component {
           <div className="testimonial-item">
             <div className="testimonial-content">
               <p>
-                multiply given all hath given may meat god abundant appear lioud
-                fourth madman mane said god dominion great gathering called very
-                shall after cre ated from fruitful place over the mitual{" "}
+                The TV looks beautiful in our living room but I faced some
+                connectivity issues with WiFi. After contacting support, they
+                guided me through the solution. Happy with the after-sales
+                service.{" "}
               </p>
               <div className="author-info">
                 <div className="author-title">
-                  <h4>Alesha Mature</h4>
+                  <h4>Ananya Gupta</h4>
                   {/* <span className="position">Sr. Designer</span> */}
                 </div>
               </div>
@@ -119,13 +132,13 @@ export default class TestimoinalSlider extends Component {
           <div className="testimonial-item">
             <div className="testimonial-content">
               <p>
-                multiply given all hath given may meat god abundant appear lioud
-                fourth madman mane said god dominion great gathering called very
-                shall after cre ated from fruitful place over the mitual{" "}
+                Plixon Smart TV has transformed our family entertainment
+                experience! The picture quality is exceptional and the smart
+                features work flawlessly. Best purchase we've made this year!{" "}
               </p>
               <div className="author-info">
                 <div className="author-title">
-                  <h4>Martyn Decode</h4>
+                  <h4>Vikram Singh</h4>
                   {/* <span className="position">Sr. Designer</span> */}
                 </div>
               </div>
