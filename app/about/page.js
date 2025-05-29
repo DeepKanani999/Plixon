@@ -127,21 +127,6 @@ const About = () => {
     setIsPopupOpen(false); // Close the popup
   };
 
-  const handleButtonClick = () => {
-    if (!mounted) return;
-
-    const userInfo = sessionStorage.getItem("userInfo");
-    if (isMobile) {
-      handleWhatsApp(); // Directly open WhatsApp on mobile
-    } else {
-      if (!userInfo) {
-        setIsPopupOpen(true);
-      } else {
-        handleWhatsApp();
-      }
-    }
-  };
-
   return (
     <Layout>
       {mounted && isPopupOpen && !sessionStorage.getItem("userInfo") && (
@@ -230,7 +215,7 @@ const About = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/phone_black.png"
+                        src="/assets/images/black-icons/phone_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -260,7 +245,7 @@ const About = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/location_black.png"
+                        src="/assets/images/black-icons/location_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -301,7 +286,7 @@ const About = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/whatsapp_black.png"
+                        src="/assets/images/black-icons/whatsapp_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -331,7 +316,7 @@ const About = () => {
                       }}
                     >
                       <img
-                        src="/assets/images/black-icons/gmail_black.png"
+                        src="/assets/images/black-icons/gmail_black.svg"
                         alt="Call"
                         style={{ height: "20px", width: "20px" }}
                       />
@@ -341,43 +326,41 @@ const About = () => {
                 </div>
 
                 {/* Right Section: Rounded Social Buttons */}
-                <div style={{ display: "flex", gap: "10px" }}>
+                <div
+                  style={{ display: "flex", gap: "10px", marginLeft: "20px" }}
+                >
                   <button
                     className="social-rounded-btn"
                     onClick={handleFacebook}
-                    style={{ padding: "8px", backgroundColor: "#3A559F" }}
                   >
                     <img
-                      src="/assets/images/icons/facebook.png"
+                      src="/assets/images/social-media-icons/Facebook.svg"
                       alt="Facebook"
                     />
                   </button>
                   <button
                     className="social-rounded-btn"
                     onClick={handleInstagram}
-                    style={{ padding: "8px", backgroundColor: "#D03B98" }}
                   >
                     <img
-                      src="/assets/images/icons/instagram.png"
+                      src="/assets/images/social-media-icons/Instagram.svg"
                       alt="Instagram"
                     />
                   </button>
                   <button
                     className="social-rounded-btn"
                     onClick={handleLinkedIn}
-                    style={{ padding: "8px", backgroundColor: "#0B63BD" }}
                   >
                     <img
-                      src="/assets/images/icons/linkedin.png"
+                      src="/assets/images/social-media-icons/Linkedin.svg"
                       alt="LinkedIn"
                     />
                   </button>
-                  <button
-                    className="social-rounded-btn"
-                    onClick={handleShare}
-                    style={{ padding: "8px", backgroundColor: "#00ADFF" }}
-                  >
-                    <img src="/assets/images/icons/share.png" alt="Share" />
+                  <button className="social-rounded-btn" onClick={handleShare}>
+                    <img
+                      src="/assets/images/social-media-icons/Share.svg"
+                      alt="Share"
+                    />
                   </button>
                 </div>
               </div>
@@ -401,15 +384,18 @@ const About = () => {
                   data-wow-delay="10ms"
                 >
                   <div className="icon">
-                    <i className="flaticon-add-user" />
+                    {/* <i className="flaticon-add-user" /> */}
+                    <img
+                      src="/assets/images/about-us-page/User-Friendly-Experience.svg"
+                      alt="User-Friendly"
+                      style={{ height: "55px", width: "55px" }}
+                    />
                   </div>
                   <div className="content">
-                    <h3 className="title">User-Friendly Experience</h3>
+                    <h3 className="title">VoicePro Remote Control</h3>
                     <p>
-                      At Plixon, our Smart TVs are designed for effortless
-                      usability — with intuitive interfaces, smooth navigation,
-                      and instant access to all your favorite streaming apps and
-                      features.
+                      Control your TV with your voice. Just say what you want to
+                      watch — no typing, no hassle.
                     </p>
                     {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
@@ -423,14 +409,19 @@ const About = () => {
                   data-wow-delay="20ms"
                 >
                   <div className="icon">
-                    <i className="flaticon-gift-box" />
+                    {/* <i className="flaticon-gift-box" /> */}
+                    <img
+                      src="/assets/images/about-us-page/Exciting-Daily-Deals.svg"
+                      alt="User-Friendly"
+                      style={{ height: "55px", width: "55px" }}
+                    />
                   </div>
                   <div className="content">
-                    <h3 className="title">Exciting Daily Deals</h3>
+                    <h3 className="title">SmartConnect+</h3>
                     <p>
-                      Enjoy unbeatable value every day. Plixon offers exclusive
-                      daily deals on high-performance Smart TVs, giving you
-                      premium quality at pocket-friendly prices.
+                      Easily sync your smartphone, tablet, or laptop to your TV
+                      wirelessly for seamless content sharing and screen
+                      mirroring.
                     </p>
                     {/* <Link className="btn-link icon-btn" href="/how-work">
                       More Details
@@ -444,7 +435,12 @@ const About = () => {
                   data-wow-delay="30ms"
                 >
                   <div className="icon">
-                    <i className="flaticon-laptop" />
+                    {/* <i className="flaticon-laptop" /> */}
+                    <img
+                      src="/assets/images/about-us-page/Smart-&-Quick-Search.svg"
+                      alt="User-Friendly"
+                      style={{ height: "55px", width: "55px" }}
+                    />
                   </div>
                   <div className="content">
                     <h3 className="title">Smart & Quick Search</h3>
@@ -466,7 +462,12 @@ const About = () => {
                   data-wow-delay="40ms"
                 >
                   <div className="icon">
-                    <i className="flaticon-headphone" />
+                    {/* <i className="flaticon-headphone" /> */}
+                    <img
+                      src="/assets/images/about-us-page/Live-Support.svg"
+                      alt="User-Friendly"
+                      style={{ height: "55px", width: "55px" }}
+                    />
                   </div>
                   <div className="content">
                     <h3 className="title">24/7 Live Support</h3>
@@ -516,7 +517,12 @@ const About = () => {
                       data-wow-delay="10ms"
                     >
                       <div className="icon">
-                        <i className="flaticon-find" />
+                        {/* <i className="flaticon-find" /> */}
+                        <img
+                          src="/assets/images/about-us-page/Perfect-Match-Effortlessly.svg"
+                          alt="User-Friendly"
+                          style={{ height: "40px", width: "40px" }}
+                        />
                       </div>
                       <div className="content">
                         <h5>Perfect Match, Effortlessly</h5>
@@ -531,7 +537,12 @@ const About = () => {
                       data-wow-delay="20ms"
                     >
                       <div className="icon">
-                        <i className="flaticon-place" />
+                        {/* <i className="flaticon-place" /> */}
+                        <img
+                          src="/assets/images/about-us-page/Smart-&-Simple-Selection.svg"
+                          alt="User-Friendly"
+                          style={{ height: "40px", width: "40px" }}
+                        />
                       </div>
                       <div className="content">
                         <h5>Smart & Simple Selection</h5>
@@ -546,7 +557,12 @@ const About = () => {
                       data-wow-delay="30ms"
                     >
                       <div className="icon">
-                        <i className="flaticon-social-care" />
+                        {/* <i className="flaticon-social-care" /> */}
+                        <img
+                          src="/assets/images/about-us-page/Expert-Support.svg"
+                          alt="User-Friendly"
+                          style={{ height: "40px", width: "40px" }}
+                        />
                       </div>
                       <div className="content">
                         <h5>24/7 Expert Support</h5>
@@ -594,42 +610,61 @@ const About = () => {
       <section className="cta-area">
         <div
           className="cta-wrapper-two bg_cover b"
-          style={{ backgroundImage: "url(assets/images/bg/cta-bg-2.jpg)" }}
+          style={{
+            backgroundImage: "url(/assets/images/bg/cta-bg-2.jpg)",
+            height: "40vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-lg-7">
-                <div className="company-name wow fadeInLeft">Plixon</div>
-              </div>
-              <div className="col-lg-5">
-                <div className="cta-content-box wow fadeInRight">
-                  <h2>Experience Best Display Technology</h2>
-                  <p>
-                    Superior TV collection featuring crystal-clear resolution
-                    and immersive sound that transforms your viewing into a
-                    cinema-like experience.
-                  </p>
-                  <a
-                    onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = "/assets/images/Plixon-Catalogue-Digital.pdf";
-                      link.download = "Plixon-Catalogue-Digital.pdf"; // Optional: Specify the file name
-                      link.click();
-                    }}
-                    className="main-btn"
-                    style={{
-                      display: "inline-block",
-                      padding: "10px 20px",
-                      backgroundColor: "#69C8C7",
-                      color: "#FFF",
-                      textDecoration: "none",
-                      borderRadius: "5px",
-                      marginTop: "10px",
-                    }}
-                  >
-                    Download Catalogue
-                  </a>
-                </div>
+          <div
+            className="row align-items-center"
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+            }}
+          >
+            <div className="col-lg-7">
+              <div
+                className="cta-content-box wow fadeInRight"
+                style={{
+                  alignItems: "center",
+                  justifyContent: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <h2 style={{ textAlign: "center" }}>
+                  Experience Best Display Technology
+                </h2>
+                <p style={{ textAlign: "center" }}>
+                  Superior TV collection featuring crystal-clear resolution and
+                  immersive sound that transforms your viewing into a
+                  cinema-like experience.
+                </p>
+                <a
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = "/assets/images/Plixon-Catalogue-Digital.pdf";
+                    link.download = "Plixon-Catalogue-Digital.pdf"; // Optional: Specify the file name
+                    link.click();
+                  }}
+                  className="main-btn"
+                  style={{
+                    display: "inline-block",
+                    padding: "10px 20px",
+                    backgroundColor: "#69C8C7",
+                    color: "#FFF",
+                    textDecoration: "none",
+                    borderRadius: "5px",
+                    marginTop: "10px",
+                    alignSelf: "center",
+                  }}
+                >
+                  Download Catalogue
+                </a>
               </div>
             </div>
           </div>
@@ -670,7 +705,7 @@ const About = () => {
           <div
             className="newsletter-wrapper newsletter-wrapper-one bg_cover"
             style={{
-              backgroundImage: "url(assets/images/bg/newsletter-bg-1.jpg)",
+              backgroundImage: "url(/assets/images/bg/newsletter-bg-1.jpg)",
             }}
           >
             <div className="row">

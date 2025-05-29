@@ -468,7 +468,6 @@ const HomeScreen = () => {
     // const url = `https://graph.facebook.com/122192171882269881/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp&access_token=EAAKTYZCtEvk8BO9s6RuBy8T16kQqyGq3klphYHPZBorwH4YLuZAhZCmG1B30gzGKjJ2JCUWIIRZCDZAvg3NkhDZCioBFzHnMaAZCCucsYoZCPcUNgWgzCrXD3CiADDIMe2iAjtiAq7p3cvjI3aOPnDXCVzcpwEQTkDNzxNgLcUB1566z3x1hsZCJAy5djrr8UJveuDcuENJGyp91Qb2K0APmaifwZDZD`;
     const url = `https://graph.facebook.com/v18.0/694832246826637?fields=instagram_business_account&access_token=EAAXdOvoxd4gBOzVHb8oonFHKF0wJr0zbdkLLxHzT5pZCOF1qnP836iXgrCgZCJ7rfyMPFR5mCI3ZBvmhdbuPZBupec2Q53dV6axXhTsaMUhG1HpqBEyo6mP1q9TX3xHv0jHRdTMnRb9CZATJJc8qfunKYlWuH6h1MukL4pJGdTTC4v2IU0wI2dPZADvcHQcj25GUphsHYZBVgyhi3dxwqyxsQkjvS2y3qcZD`;
 
-
     // fetch user id
     fetch(url)
       .then((response) => response.json())
@@ -916,37 +915,33 @@ const HomeScreen = () => {
               </div>
 
               {/* Right Section: Rounded Social Buttons */}
-              <div style={{ display: "flex", gap: "10px" }}>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleFacebook}
-                  style={{ padding: "8px", backgroundColor: "#3A559F" }}
-                >
-                  <img src="/assets/images/icons/facebook.png" alt="Facebook" />
-                </button>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleInstagram}
-                  style={{ padding: "8px", backgroundColor: "#D03B98" }}
-                >
+              <div style={{ display: "flex", gap: "10px", marginLeft: "20px" }}>
+                <button className="social-rounded-btn" onClick={handleFacebook}>
                   <img
-                    src="/assets/images/icons/instagram.png"
-                    alt="Instagram"
+                    src="/assets/images/social-media-icons/Facebook.svg"
+                    alt="Facebook"
                   />
                 </button>
                 <button
                   className="social-rounded-btn"
-                  onClick={handleLinkedIn}
-                  style={{ padding: "8px", backgroundColor: "#0B63BD" }}
+                  onClick={handleInstagram}
                 >
-                  <img src="/assets/images/icons/linkedin.png" alt="LinkedIn" />
+                  <img
+                    src="/assets/images/social-media-icons/Instagram.svg"
+                    alt="Instagram"
+                  />
                 </button>
-                <button
-                  className="social-rounded-btn"
-                  onClick={handleShare}
-                  style={{ padding: "8px", backgroundColor: "#00ADFF" }}
-                >
-                  <img src="/assets/images/icons/share.png" alt="Share" />
+                <button className="social-rounded-btn" onClick={handleLinkedIn}>
+                  <img
+                    src="/assets/images/social-media-icons/Linkedin.svg"
+                    alt="LinkedIn"
+                  />
+                </button>
+                <button className="social-rounded-btn" onClick={handleShare}>
+                  <img
+                    src="/assets/images/social-media-icons/Share.svg"
+                    alt="Share"
+                  />
                 </button>
               </div>
             </div>
@@ -1117,39 +1112,42 @@ const HomeScreen = () => {
                   <button
                     className="social-rounded-btn"
                     onClick={handleFacebook}
-                    style={{ padding: "8px", backgroundColor: "#3A559F" }}
+                    // style={{ padding: "8px", backgroundColor: "#FF0000" }}
                   >
                     <img
-                      src="/assets/images/icons/facebook.png"
+                      src="/assets/images/social-media-icons/Facebook.svg"
                       alt="Facebook"
                     />
                   </button>
                   <button
                     className="social-rounded-btn"
                     onClick={handleInstagram}
-                    style={{ padding: "8px", backgroundColor: "#D03B98" }}
+                    // style={{ padding: "8px", backgroundColor: "#D03B98" }}
                   >
                     <img
-                      src="/assets/images/icons/instagram.png"
+                      src="/assets/images/social-media-icons/Instagram.svg"
                       alt="Instagram"
                     />
                   </button>
                   <button
                     className="social-rounded-btn"
                     onClick={handleLinkedIn}
-                    style={{ padding: "8px", backgroundColor: "#0B63BD" }}
+                    // style={{ padding: "8px", backgroundColor: "#0B63BD" }}
                   >
                     <img
-                      src="/assets/images/icons/linkedin.png"
+                      src="/assets/images/social-media-icons/Linkedin.svg"
                       alt="LinkedIn"
                     />
                   </button>
                   <button
                     className="social-rounded-btn"
                     onClick={handleShare}
-                    style={{ padding: "8px", backgroundColor: "#00ADFF" }}
+                    // style={{ padding: "8px", backgroundColor: "#00ADFF" }}
                   >
-                    <img src="/assets/images/icons/share.png" alt="Share" />
+                    <img
+                      src="/assets/images/social-media-icons/Share.svg"
+                      alt="Share"
+                    />
                   </button>
                 </div>
                 <div
@@ -1167,7 +1165,7 @@ const HomeScreen = () => {
                       )
                     }
                     style={{
-                      padding: "12px 40px",
+                      padding: "9px 40px",
                       border: "1px solid #e0e0e0",
                       borderRadius: "8px",
                       backgroundColor: "white",
@@ -1424,9 +1422,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-desktop"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/OLED-Technology.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -1437,9 +1441,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-volume"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/Smart-Voice-Control.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -1450,9 +1460,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-desktop"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/HD-Resolution.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -1463,9 +1479,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-desktop"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/Smart-Tv.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -1476,9 +1498,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-volume"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/Alexa-Google-Tv.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -1489,9 +1517,15 @@ const HomeScreen = () => {
                     <div className="col-lg-4 col-md-6 col-sm-12">
                       <div className="icon-box icon-box-one">
                         <div className="icon">
-                          <i
+                          {/* <i
                             className="ti-desktop"
                             style={{ color: "#69C8C7" }}
+                          /> */}
+                          <img
+                            src="/assets/images/About-us/Best-for-Streaming.svg"
+                            className="me-2 mx-2"
+                            alt="WhatsApp"
+                            style={{ width: "20px", height: "20px" }}
                           />
                         </div>
                         <div className="info">
@@ -2016,40 +2050,58 @@ const HomeScreen = () => {
                   <h4 className="title">Customer Review</h4>
                   <ul className="review-list">
                     <li className="review">
-                      <div className="thumb">
-                        <img
-                          src="/assets/images/listing/review-1.jpg"
-                          alt="review image"
-                        />
+                      <div
+                        className="thumb border"
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          display: "flex",
+                          borderRadius: "10px",
+                          backgroundColor: "#F7F7F7",
+                          fontSize: "40px",
+                        }}
+                      >
+                        D
                       </div>
                       <div className="review-content">
-                        <h5>Moriana Steve</h5>
-                        <span className="date">Sep 02, 2021</span>
+                        <h5>Deep Patel</h5>
+                        <span className="date">May 29, 2025</span>
                         <p>
-                          Musutrum orci montes hac at neque mollis taciti
-                          parturient vehicula interdum verra cubilia ipsum duis
-                          amet nullam sit ut ornare mattis urna.{" "}
+                          We recently bought the Plixon QLED Smart TV, and we’re
+                          absolutely thrilled with our choice! The sound quality
+                          is crisp and immersive—it genuinely feels like a mini
+                          home theater. The picture clarity is stunning, with
+                          vivid colors and deep contrasts that make every scene
+                          pop. Whether we’re streaming movies, watching sports,
+                          or just browsing content, the experience is smooth and
+                          enjoyable. It's not just a TV—it’s an upgrade to our
+                          living room. Highly recommend it to anyone looking for
+                          great value and performance!{" "}
                         </p>
                         <div className="content-meta d-flex align-items-center justify-content-between">
-                          <ul className="ratings ratings-three">
+                          <ul className="ratings ratings-six">
                             <li>
-                              <span className="av-rate">4.5</span>
+                              <span className="av-rate">5</span>
                             </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
+                            {[1, 2, 3, 4, 5].map((val, _ind) => (
+                              <li className="px-1" key={_ind}>
+                                <img
+                                  src="/assets/images/contact-info/rating-star-fill.svg"
+                                  alt="Call"
+                                  style={{ height: "20px", width: "20px" }}
+                                />
+                              </li>
+                            ))}
+                            {/* <img
+                              src="/assets/images/contact-info/rating-star.svg"
+                              alt="Call"
+                              style={{
+                                height: "20px",
+                                width: "20px",
+                                marginTop: "1px",
+                                marginLeft: "2px",
+                              }}
+                            /> */}
                           </ul>
                           <a href="#" className="reply">
                             <i className="ti-share-alt" />
@@ -2059,40 +2111,55 @@ const HomeScreen = () => {
                       </div>
                     </li>
                     <li className="review">
-                      <div className="thumb">
-                        <img
-                          src="/assets/images/listing/review-2.jpg"
-                          alt="review image"
-                        />
+                      <div
+                        className="thumb border"
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          display: "flex",
+                          borderRadius: "10px",
+                          backgroundColor: "#F7F7F7",
+                          fontSize: "40px",
+                        }}
+                      >
+                        M
                       </div>
                       <div className="review-content">
-                        <h5>Moriana Steve</h5>
+                        <h5>Maria Shah</h5>
                         <span className="date">Sep 02, 2021</span>
                         <p>
-                          Musutrum orci montes hac at neque mollis taciti
-                          parturient vehicula interdum verra cubilia ipsum duis
-                          amet nullam sit ut ornare mattis urna.{" "}
+                          Absolutely Impressed with Plixon Smart Android QLED
+                          TV! I recently bought the Plixon PLXFHD-32N is a
+                          32-inch Full HD TV, and I must say – it has exceeded
+                          my expectations in every way! The picture clarity is
+                          stunning, with vibrant colors and sharp details that
+                          make watching movies and playing games a truly
+                          immersive experience..{" "}
                         </p>
                         <div className="content-meta d-flex align-items-center justify-content-between">
-                          <ul className="ratings ratings-three">
+                          <ul className="ratings ratings-six">
                             <li>
-                              <span className="av-rate">4.5</span>
+                              <span className="av-rate">5</span>
                             </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
+                            {[1, 2, 3, 4, 5].map((val, _ind) => (
+                              <li className="px-1" key={_ind}>
+                                <img
+                                  src="/assets/images/contact-info/rating-star-fill.svg"
+                                  alt="Call"
+                                  style={{ height: "20px", width: "20px" }}
+                                />
+                              </li>
+                            ))}
+                            {/* <img
+                              src="/assets/images/contact-info/rating-star.svg"
+                              alt="Call"
+                              style={{
+                                height: "20px",
+                                width: "20px",
+                                marginTop: "1px",
+                                marginLeft: "2px",
+                              }}
+                            /> */}
                           </ul>
                           <a href="#" className="reply">
                             <i className="ti-share-alt" />
@@ -2102,40 +2169,56 @@ const HomeScreen = () => {
                       </div>
                     </li>
                     <li className="review">
-                      <div className="thumb">
-                        <img
-                          src="/assets/images/listing/review-3.jpg"
-                          alt="review image"
-                        />
+                      <div
+                        className="thumb border"
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          display: "flex",
+                          borderRadius: "10px",
+                          backgroundColor: "#F7F7F7",
+                          fontSize: "40px",
+                        }}
+                      >
+                        S
                       </div>
                       <div className="review-content">
-                        <h5>Moriana Steve</h5>
+                        <h5>Sahil Soni</h5>
                         <span className="date">Sep 02, 2021</span>
                         <p>
-                          Musutrum orci montes hac at neque mollis taciti
-                          parturient vehicula interdum verra cubilia ipsum duis
-                          amet nullam sit ut ornare mattis urna.{" "}
+                          Loving My New Plixon QLED TV! Just got the Plixon
+                          Smart Android QLED TV recently, and I’m honestly
+                          loving it. The picture quality is amazing – super
+                          sharp with vibrant colors that really pop. Watching
+                          movies feels like a mini theatre experience at home!
+                          The sound is clear and loud enough that I don’t even
+                          feel the need for extra speakers. It’s great for
+                          gaming too – smooth performance and no lag at all.{" "}
                         </p>
                         <div className="content-meta d-flex align-items-center justify-content-between">
-                          <ul className="ratings ratings-three">
+                          <ul className="ratings ratings-six">
                             <li>
-                              <span className="av-rate">4.5</span>
+                              <span className="av-rate">4</span>
                             </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
-                            <li className="star">
-                              <i className="flaticon-star-1" />
-                            </li>
+                            {[1, 2, 3, 4].map((val, _ind) => (
+                              <li className="px-1" key={_ind}>
+                                <img
+                                  src="/assets/images/contact-info/rating-star-fill.svg"
+                                  alt="Call"
+                                  style={{ height: "20px", width: "20px" }}
+                                />
+                              </li>
+                            ))}
+                            <img
+                              src="/assets/images/contact-info/rating-star.svg"
+                              alt="Call"
+                              style={{
+                                height: "20px",
+                                width: "20px",
+                                marginTop: "1px",
+                                marginLeft: "2px",
+                              }}
+                            />
                           </ul>
                           <a href="#" className="reply">
                             <i className="ti-share-alt" />
